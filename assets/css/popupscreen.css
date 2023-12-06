@@ -1,0 +1,248 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+.popup{
+    position: fixed;
+    width: 100%;
+    margin: auto;
+    opacity: 0;
+  }
+  
+  .slider{
+    position: relative;
+    display: flex;
+    gap: 40px;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .popup__dismiss{
+    position: absolute;
+    width: 25px;
+    top: 18%;
+    right: 33%;
+    cursor: pointer;
+  }
+  
+  .popup--show{
+    opacity: 1;
+  }
+  
+  .popup--close{
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+
+
+.slider {
+    display: flex;
+    width: 500%;
+    margin: auto;
+    transition: all 0.25s ease-in;
+    transform: translateX(0);
+}
+
+.slider .box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider .box .details {
+    padding: 8rem;
+    padding-left: 26rem;
+    z-index: 100;
+    grid-column: 1/span 1;
+    grid-row: 1/-1;
+}
+
+.slider .box .bg {
+    padding: 2rem;
+    transform: skewX(7deg);
+    position: absolute;
+    height: 100%;
+    left: -10%;
+    padding-left: 20rem;
+    transform-origin: 0 100%;
+}
+
+.slider .box .bg::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: inherit;
+    pointer-events: none;
+    transform: skewX(10deg);
+}
+
+.images{
+    width: 500px;
+    height: 500px;
+    margin: auto;
+}
+
+.slider .box .details button:hover {
+    opacity: 0.8;
+  }
+  .slider .box .details button:focus {
+    outline: none;
+    border: none;
+  }
+  .trail div {
+    padding: 2rem;
+    border-top: 3px solid rgb(0, 255, 242);
+    cursor: pointer;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+  }
+  .trail div:hover {
+    opacity: 0.6;
+  }
+  .slider .illustration {
+    grid-column: 2/-1;
+    grid-row: 1/-1;
+    justify-self: center;
+  }
+
+  
+.prev,
+.next,
+.trail {
+  z-index: 10000;
+  position: absolute;
+}
+
+.prev,
+.next {
+  width: 4rem;
+  cursor: pointer;
+  opacity: 0.2;
+  transition: all 0.3s ease;
+}
+
+
+.prev {
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+  }
+  
+  .next {
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+  }
+  
+  .trail {
+    bottom: -3%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .prev:hover,
+.next:hover {
+  opacity: 1;
+}
+
+.active {
+    opacity: 1 !important;
+  }
+
+@media only screen and (max-width: 1000px) {
+  .slider {
+    height: 100vh;
+  }
+  .slider .box .details {
+    padding: 2rem;
+    padding-left: 15rem;
+    z-index: 100;
+    grid-column: 1/span 1;
+    grid-row: 1/-1;
+}
+.images{
+  width: 400px;
+  height: 400px;
+  margin: auto;
+}
+.popup__dismiss{
+    position: absolute;
+    width: 25px;
+    top: 25%;
+    right: 30%;
+    cursor: pointer;
+}
+}
+@media only screen and (max-width: 800px) {
+  .slider .box .details {
+    padding: 2rem;
+    padding-left: 13rem;
+    z-index: 100;
+    grid-column: 1/span 1;
+    grid-row: 1/-1;
+}
+
+.popup__dismiss{
+    position: absolute;
+    width: 25px;
+    top: 18%;
+    right: 12%;
+    cursor: pointer;
+}
+
+.trail {
+  bottom: -3%;
+  left: 30%;
+  transform: translateX(-50%);
+  width: 30%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+}
+
+@media only screen and (max-width: 650px) {
+  .slider .box {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .slider .box .details {
+    grid-row: 2/span 1;
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 2rem;
+    transform: translateY(-9rem);
+  }
+  .popup__dismiss{
+    position: absolute;
+    width: 25px;
+    top: 24%;
+    right: 10%;
+    cursor: pointer;
+}
+  .prev,
+  .next {
+      display: none;
+    }
+    .trail {
+        width: 20%;
+        bottom: 5%;
+      }
+      .trail div {
+        padding: 1rem;
+      }
+}

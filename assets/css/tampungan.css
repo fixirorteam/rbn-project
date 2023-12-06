@@ -1,0 +1,49 @@
+.popup{
+    position: fixed;
+    width: 100%;
+    margin: auto;
+    opacity: 0;
+  }
+  
+  .slider{
+    position: relative;
+    display: flex;
+    margin: 15vh;
+    gap: 40px;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .popup__dismiss{
+    position: absolute;
+    width: 25px;
+    top: 100%;
+    right: 10%;
+    cursor: pointer;
+  }
+  
+  .popup--show{
+    opacity: 1;
+  }
+  
+  .popup--close{
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .slider-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    background: #333;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    transition: background 0.3s ease-in-out;
+  }
